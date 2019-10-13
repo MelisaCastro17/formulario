@@ -1,0 +1,205 @@
+<!--
+  <button mat-fab >
+     hola
+</button>
+-->
+<!--Select-->
+<br>
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Fecha de solicitud">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+<mat-form-field>
+  <mat-label>Selecciona una Facultad</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option value="Sistemas">Ingenieria de Sistemas</mat-option>
+    <mat-option value="Industrial">Ingenieria Industrial</mat-option>
+    <mat-option value="Ambiental">Ingenieria Ambiental</mat-option>
+    <mat-option value="Mecanica">Ingenieria Mecánica</mat-option>
+
+  </mat-select>
+</mat-form-field>
+<br>
+<p>Tu seleccion es: {{selected}}</p>
+<hr>
+<mat-form-field>
+  <mat-label>Selecciona una materia</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option value="Sistemas">Programacion en ambientes web</mat-option>
+    <mat-option value="Sistemas">Redes y comunicaciones</mat-option>
+    <mat-option value="Sistemas">ingenieria de software</mat-option>
+    <mat-option value="Sistemas">seguridad informatica</mat-option>
+    <mat-option value="Industrial">torque y magnetismo</mat-option>
+    <mat-option value="Industrial">fisica optica</mat-option>
+    <mat-option value="Industrial">fuerza centripeta</mat-option>
+    <mat-option value="Industrial">quimica</mat-option>
+    <mat-option value="Ambiental">electricidad y magnetismo</mat-option>
+    <mat-option value="Ambiental">topografia</mat-option>
+    <mat-option value="Ambiental">suelos</mat-option>
+    <mat-option value="Ambiental">contaminacion atmosferica</mat-option>
+    <mat-option value="Mecanica">maquinas termicas</mat-option>
+    <mat-option value="Mecanica">ciencia de los materiales</mat-option>
+    <mat-option value="Mecanica">cinematicaa</mat-option>
+    <mat-option value="Mecanica">termodinamica</mat-option>
+
+  </mat-select>
+</mat-form-field>
+<br>
+<p>Tu seleccion es: {{selected}}</p>
+<mat-form-field>
+  <mat-label>Selecciona un docente</mat-label>
+  <mat-select [(value)]="selected">
+    <mat-option>None</mat-option>
+    <mat-option value="Sistemas">Alonso Moncada Mauricio </mat-option>
+    <mat-option value="Sistemas">Blanco Garrido Fabian</mat-option>
+    <mat-option value="Sistemas">Cortes Mendez Jairo</mat-option>
+    <mat-option value="Sistemas">Forero Saboya Pedro</mat-option>
+    <mat-option value="Industrial">Andres Giovanni Guarin Salinas </mat-option>
+    <mat-option value="Industrial">Fernando Gonzales Becerra</mat-option>
+    <mat-option value="Industrial">Edgar Leonardo Duarte Forero</mat-option>
+    <mat-option value="Industrial">Fabiola Saenz</mat-option>
+    <mat-option value="Ambiental">Oscar Leonardo Medina Ortiz</mat-option>
+    <mat-option value="Ambiental">Ruiz Martinez Lida Esperanza</mat-option>
+    <mat-option value="Ambiental">Acevedo Buitrago Baudilio</mat-option>
+    <mat-option value="Ambiental">Castro Fernandez Mario Fernando</mat-option>
+    <mat-option value="Mecanica">Fredy Andres Aguirre</mat-option>
+    <mat-option value="Mecanica">Ismael Marquez</mat-option>
+    <mat-option value="Mecanica">Andres Felipe Eslava Sarmiento</mat-option>
+    <mat-option value="Mecanica">Maria Gabriela Mago Ramos</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Nombre De La Practica">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Numero de Solicitud"></textarea>
+  </mat-form-field>
+ 
+</div>
+<!--Radio button-->
+<label id="example-radio-group-label">A. LA SOLICITUD TIENE GUIA DE LABORATORIO</label>
+<br>
+<br>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+<br>
+<label id="example-radio-group-label">B. REQUIERE EL USO DEL LABORATORIO</label>
+<br>
+<br>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+<br>
+<label id="example-radio-group-label">REQUIERE DE LA ASISTENCIA DEL AUXILIAR DEL LABORATORIO</label>
+<br>
+<br>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+<br>
+<label id="example-radio-group-label">UTILIZA MAQUINAS DE EQUIPO DE HERRRAMIENTAS</label>
+<br>
+<br>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>De 1-10 CANTIDAD DE LAS MAQUINAS UTILIZADAS</div>
+<mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="10"></mat-slider>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="DESCRIPCION DE LAS MAQUINAS UTILIZADAS">
+  </mat-form-field>
+</div>
+
+<br>
+
+
+<br>
+<label id="example-radio-group-label">UTILIZA MATERIAL DE CONSUMO</label>
+<br>
+<br>
+<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+  <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+<div>De 1-10 CANTIDAD DEL MATERIAL DE CONSUMO</div>
+<mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="10"></mat-slider>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="DESCRIPCION DEL MATERIAL DE CONSUMO ">
+  </mat-form-field>
+</div>
+
+<br>
+
+<div>NUMERO DE ESTUDIANES EN LA PRACTICA</div>
+<mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="1" max="50"></mat-slider>
+<div class="example-container">
+  <mat-form-field>
+<br>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="ENTREGA ">
+  </mat-form-field>
+</div>
+<hr>
+<br>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="RECIBE ">
+  </mat-form-field>
+</div>
+
+<br>
+<div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="OBSERVACIONES ">
+  </mat-form-field>
+</div>
+
+<br>
+<hr>
+
+<!--input-->
+<mat-form-field>
+  <mat-label>Hora de salida</mat-label>
+  <mat-select #fontSize value="16px" (selectionChange)="triggerResize()">
+    <mat-option value="7:00">7:00</mat-option>
+    <mat-option value="8:00">8:00</mat-option>
+    <mat-option value="9:00">9:00</mat-option>
+    <mat-option value="10:00">10:00</mat-option>
+    <mat-option value="11:00">11:00</mat-option>
+    <mat-option value="12:00">12:00</mat-option>
+    <mat-option value="13:00">13:00</mat-option>
+    <mat-option value="14:00">14:00</mat-option>
+    <mat-option value="15:00">15:00</mat-option>
+    <mat-option value="16:00">16:00</mat-option>
+    <mat-option value="17:00">17:00</mat-option>
+    <mat-option value="18:00">18:00</mat-option>
+    <mat-option value="19:00">19:00</mat-option>
+    <mat-option value="20:00">20:00</mat-option>
+    <mat-option value="21:00">21:00</mat-option>
+    <mat-option value="22:00">22:00</mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+  
